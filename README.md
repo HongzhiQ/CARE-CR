@@ -16,7 +16,10 @@ While Large Language Models (LLMs) show promise in mental health support, curren
 
 <p align="center">
   <img src="./care-cr.png" alt="CARE-CR Architecture Overview" width="100%">
+  <br>
+  <em>Figure 1. Overview of CARE-CR with training and inference stages for adaptive cognitive restructuring generation.</em>
 </p>
+
 
 ### 🚀 Key Contributions & Architecture Highlights
 
@@ -27,11 +30,7 @@ As illustrated in the framework above, CARE-CR achieves dynamic and personalized
 * **Dimension-Guided Hierarchical MCTS (DG-HMCTS):** To overcome expert data scarcity, we introduce a structured tree search method for high-fidelity synthetic preference augmentation, ensuring the generated data follows a coherent clinical progression (Affective Opening $\rightarrow$ Cognitive Challenge $\rightarrow$ Closing Integration).
 * **Expert Policy Fine-Tuning & Weight-Space Fusion:** We train dimension-specific expert policies via preference optimization (e.g., DPO). At inference time, these experts are dynamically combined via **Weight-Space Fusion** (parameter-space interpolation) guided by the predicted contextual weights, enabling personalized and controllable therapeutic generation.
 
-## Highlights
-- Contextual preference prediction on a simplex (`λ_ctx(x)`) to represent clinician priorities.
-- DG-HMCTS over a 3-level cognitive-reframing strategy tree (E→C→S) with dimension-guided priors.
-- Dimension-wise reward models (`r_k`) and dimension-specific policy experts (`π_{θ_k}`).
-- Script-first training workflow with minimal repository coupling.
+
 
 ## Table of Contents
 - [Dataset](#dataset)
@@ -44,6 +43,16 @@ As illustrated in the framework above, CARE-CR achieves dynamic and personalized
 - [Ethical Considerations](#ethical-considerations)
 
 ## Dataset
+
+⚠️ **Data Access Policy**
+Due to the highly sensitive and clinical nature of the mental health data used in this study, the **$D_{cog}$ dataset** and the **Expert-labeled preference table** are not publicly distributed in this repository. They are strictly limited to academic and non-commercial research purposes. 
+
+**To request access:**
+1. Please review and complete the **[Data Use Agreement (DUA)](./data/CARE-CR_Data_Use_Agreement.pdf)** located in the `data/` folder.
+2. Sign the agreement and email it to `[你的邮箱]` using your official institutional email address.
+3. Upon approval, we will share the data files with you, which can be placed in their respective directories as described below.
+
+---
 
 ### Cognitive restructuring dataset
 This repository also includes a cognitive restructuring dataset, denoted as **$D_{cog}$**, for supervised fine-tuning (SFT) of the base policy model.

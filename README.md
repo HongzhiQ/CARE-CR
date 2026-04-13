@@ -15,7 +15,7 @@ While Large Language Models (LLMs) show promise in mental health support, curren
 **CARE-CR** studies clinician-aligned cognitive restructuring under **context-dependent multi-preference control**. Instead of relying on a monolithic alignment strategy, we propose a decoupled optimization paradigm that dynamically adapts therapeutic strategies based on the user's specific distress context.
 
 <p align="center">
-  <img src="./image_9e3af1.jpg" alt="CARE-CR Architecture Overview" width="100%">
+  <img src="./care-cr.png" alt="CARE-CR Architecture Overview" width="100%">
 </p>
 
 ### 🚀 Key Contributions & Architecture Highlights

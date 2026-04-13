@@ -3,8 +3,6 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red.svg)](https://pytorch.org/)
 [![Transformers](https://img.shields.io/badge/Transformers-4.x-yellow.svg)](https://huggingface.co/docs/transformers)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Paper: ACL 2026](https://img.shields.io/badge/Paper-ACL_2026_Findings-green.svg)](#)
 
 > The official implementation for the paper **"CARE-CR: Context-Aware Routing and Expert Fusion for Multi-Preference Cognitive Restructuring"** (Accepted to ACL 2026 Findings).
 
@@ -49,7 +47,7 @@ Due to the highly sensitive and clinical nature of the mental health data used i
 
 **To request access:**
 1. Please review and complete the **[Data Use Agreement (DUA)](./data/CARE-CR_Data_Use_Agreement.pdf)** located in the `data/` folder.
-2. Sign the agreement and email it to `[你的邮箱]` using your official institutional email address.
+2. Sign the agreement and email it to `[qhz123@emails.bjut.edu.cn]` using your official institutional email address.
 3. Upon approval, we will share the data files with you, which can be placed in their respective directories as described below.
 
 ---

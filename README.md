@@ -1,15 +1,31 @@
-# CARE-CR
+# CARE-CR: Context-Aware Routing and Expert Fusion for Multi-Preference Cognitive Restructuring
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red.svg)](https://pytorch.org/)
 [![Transformers](https://img.shields.io/badge/Transformers-4.x-yellow.svg)](https://huggingface.co/docs/transformers)
 
-The code for the paper: **“CARE-CR: Context-Aware Routing and Expert Fusion for Multi-Preference Cognitive Restructuring”**. 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Paper: ACL 2026](https://img.shields.io/badge/Paper-ACL_2026_Findings-green.svg)](#)
 
-CARE-CR studies clinician-aligned cognitive restructuring under **context-dependent multi-preference control** by learning 
-- **dimension-wise reward models** from pairwise preferences, 
-- a **contextual preference predictor** that outputs simplex weights over clinical dimensions, 
-- **Dimension-Guided Hierarchical MCTS (DG-HMCTS)** for structured search and synthetic preference augmentation, and 
-- **expert fusion / dimension-specific policies** via preference optimization (e.g., DPO).
+> The official implementation for the paper **"CARE-CR: Context-Aware Routing and Expert Fusion for Multi-Preference Cognitive Restructuring"** (Accepted to ACL 2026 Findings).
+
+## 📖 Overview
+
+While Large Language Models (LLMs) show promise in mental health support, current approaches predominantly focus on superficial positive reframing and struggle to balance conflicting therapeutic dimensions (e.g., empathy vs. rationality). 
+
+**CARE-CR** studies clinician-aligned cognitive restructuring under **context-dependent multi-preference control**. Instead of relying on a monolithic alignment strategy, we propose a decoupled optimization paradigm that dynamically adapts therapeutic strategies based on the user's specific distress context.
+
+<p align="center">
+  <img src="./image_9e3af1.jpg" alt="CARE-CR Architecture Overview" width="100%">
+</p>
+
+### 🚀 Key Contributions & Architecture Highlights
+
+As illustrated in the framework above, CARE-CR achieves dynamic and personalized cognitive restructuring through three core stages:
+
+* **Dimension-Specific Reward Modeling:** We train multiple independent reward models from pairwise preferences to capture distinct therapeutic attributes (e.g., Positivity, Rationality, Readability).
+* **Contextual Preference Predictor:** A trained predictor evaluates the multi-dimensional per-sample scores to output optimal simplex weights ($\lambda$) tailored to the user's unique clinical context.
+* **Dimension-Guided Hierarchical MCTS (DG-HMCTS):** To overcome expert data scarcity, we introduce a structured tree search method for high-fidelity synthetic preference augmentation, ensuring the generated data follows a coherent clinical progression (Affective Opening $\rightarrow$ Cognitive Challenge $\rightarrow$ Closing Integration).
+* **Expert Policy Fine-Tuning & Weight-Space Fusion:** We train dimension-specific expert policies via preference optimization (e.g., DPO). At inference time, these experts are dynamically combined via **Weight-Space Fusion** (parameter-space interpolation) guided by the predicted contextual weights, enabling personalized and controllable therapeutic generation.
 
 ## Highlights
 - Contextual preference prediction on a simplex (`λ_ctx(x)`) to represent clinician priorities.
